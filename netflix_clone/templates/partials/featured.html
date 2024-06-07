@@ -1,0 +1,22 @@
+<div class="items-center mx-auto max-w-screen">
+    <div class="swiper">
+        <div class="bg-cover bg-center"></div>
+            <div class="w-full">
+                <div class="relative text-sm text-white box-border">
+                    <img src="{{featured_movies.image_cover.url}}" class="w-full z-0" />
+
+                    <div class="absolute top-10 left-10 w-2/5">
+                        <h1 class="text-white text-8xl font-extrabold mb-8">{{featured_movies.title}}</h1>
+                        <p class="text-xl text-white">{{featured_movies.description}}</p>
+                    </div>
+                </div>
+                <div class="w-full absolute z-10 flex justify-end pb-10 pe-10 bottom-0">
+                    <a href="/movie/{{featured_movies.uu_id}}" class="inline-flex justify-center hover:text-white items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:border-red-600 hover:bg-red-600 focus:ring-4 focus:ring-gray-400">
+                        <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
+                        Watch video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

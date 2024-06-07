@@ -1,0 +1,63 @@
+{% extends 'base/_base.html' %}
+
+{% block content %}
+
+<div class="h-screen w-full flex justify-center items-center">
+    <!-- Slider main container -->
+    <div class="container mySwiper swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper ">
+            <!-- Slides -->
+                {% for movie in movies reversed %}
+                <div class="swiper-slide bg-white flex-shrink-0"
+                    data-title="{{ movie.title }}"
+                    data-description="{{ movie.description }}"
+                    data-release-date="{{ movie.relase_date}}"
+                    data-genre="{{ movie.get_genre_display }}"
+                    data-length="{{ movie.length }}"
+                    data-image-card-url="{{ movie.image_card.url }}"
+                    data-image-cover-url="{{ movie.image_cover.url }}"
+                    data-video-url="/movie/{{ movie.uu_id }}">
+
+                    <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+                        <a href="/movie/{{ movie.uu_id }}">
+                            <img class="object-contain" src="{{movie.image_card.url}}" alt="{{movie.title}}-card">
+                        </a>
+                        <figcaption class="w-full absolute px-2 py-2 text-center text-lg text-white bottom-0 bg-red-800">
+                            <p>{{movie.title}}</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+
+        freeMode: true,
+        slidesPerView: 4,
+        spaceBetween: 40,
+        breakpoints: {
+            412: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+            },
+        },
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html class="bg-white dark:bg-gray-800 dark:border-gray-700" lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="Blayden" content="Netflix clone"/>
+        <title>{% block title %}Netfriky{% endblock %}</title>
+
+        <link rel="stylesheet" href="{% static  'assets/style.css' %}">
+
+        <link rel="icon" type="img/x-icon" href="{% static "assets/img/m-icons.jpeg"%}">
+        <!-- TAILWIND -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+
+        <!-- FLOWBITE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+        <!-- SWIPER -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- JQUERY -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    </head>
+    <body class="h-full antialiased bg-white dark:bg-gray-800 dark:border-gray-700">
+
+        {% block content %}{% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base/_base.html' %}
+{% block content %}
+
+{% include "./base/_navbar.html" %}
+
+<!-- CARROUSEL SECTION  -->
+<section class="h-screen max-w-screen bg-white dark:bg-gray-900">
+        {% include 'partials/filter.html' %}
+
+        <h1 class="mx-auto text-center mb-4 mt-10 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            PELÍCULAS PARA TÍ
+        </h1>
+
+        <!-- CARROUSEL AND MODAL -->
+        {% include './partials/carrousel.html' %}
+</section>
+
+<section class="bg-white dark:bg-gray-900">
+{% include './partials/featured.html' %}
+</section>
+
+<!-- FOOTER -->
+<section class="w-full h-max text-white dark:bg-gray-900">
+    {% include 'base/_footer.html' %}
+</section>
+
+{% endblock %}
